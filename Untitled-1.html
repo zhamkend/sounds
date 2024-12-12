@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0; /* Reset margins */
+    padding: 0; /* Reset padding */
+}
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Play a Sound</h1>
+    <div class="button-container">
+        <button onclick="playSound('sounds/open.mp3')">Start-Up</button>
+        <button onclick="playSound('sounds/clicking.mp3')">Click</button>
+        <button onclick="playSound('sounds/accept.mp3')">Accept Card</button>
+        <button onclick="playSound('sounds/decline.mp3')">Decline</button>
+    </div>
+
+    <script>
+        function playSound(fileName) {
+            const audio = new Audio(fileName);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
